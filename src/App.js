@@ -3,7 +3,7 @@ import Country from './Country';
 import Details from './Details';
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { HashRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
   const [color, setMode] = useState(true);
@@ -23,23 +23,20 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className={color? "light-elements" : "dark-elements"}>
-        <h3>Where in the world?</h3>
-        <div className="mode-Container" onClick={toggleMode}>
-          <FontAwesomeIcon icon={faMoon} />
-          <h3>{!color? "Light" : "Dark"} Mode</h3>
-        </div>
-      </header>
-      
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename={process.env.PUBLIC_URL || ''}>
+        <header className={color? "light-elements" : "dark-elements"}>
+          <h3>Where in the world?</h3>
+          <div className="mode-Container" onClick={toggleMode}>
+            <FontAwesomeIcon icon={faMoon} />
+            <h3>{!color? "Light" : "Dark"} Mode</h3>
+          </div>
+        </header>
         <Routes>
           <Route exact path="/" element={<Country sMode={color} countries={countries}/>}/>
           <Route path="/details/:country" element={<Details sMode={color} countries={countries}/>}/>
         </Routes>
-        </Router>
-    </div>
-  )
+      </Router>
+    )
 }
 
 export default App;

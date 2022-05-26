@@ -3,7 +3,7 @@ import Country from './Country';
 import Details from './Details';
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { HashRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
   const [color, setMode] = useState(true);
@@ -32,7 +32,7 @@ function App() {
         </div>
       </header>
       
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename={window.location.pathname || ''}>
         <Routes>
           <Route exact path="/" element={<Country sMode={color} countries={countries}/>}/>
           <Route path="/details/:country" element={<Details sMode={color} countries={countries}/>}/>

@@ -34,7 +34,7 @@ function App() {
       
       <Router basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/" element={<Country sMode={color} countries={countries}/>}/>
+          <Route exact path="/" element={<Country sMode={color} countries={countries}/>}/>
           <Route path="/details/:country" element={<Details sMode={color} countries={countries}/>}/>
         </Routes>
         </Router>

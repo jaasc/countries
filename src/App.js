@@ -23,7 +23,7 @@ function App() {
   }
 
   return (
-      <Router basename={process.env.PUBLIC_URL || ''}>
+      <Router>
         <header className={color? "light-elements" : "dark-elements"}>
           <h3>Where in the world?</h3>
           <div className="mode-Container" onClick={toggleMode}>

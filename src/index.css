@@ -262,7 +262,7 @@ input{
   }
 
   .indCountry{
-    width: 350px;
+    min-width: 330px;
   }
 
   .indCountry img{

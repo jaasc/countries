@@ -51,7 +51,7 @@ header{
   align-items: center;
 }
 
-.mode-Container:hover{
+.mode-Container:hover, .indCountry, .back-div, .borderBtn, .down-icon{
   cursor: pointer;
 }
 
@@ -62,6 +62,7 @@ header{
 
 .country-Container{
   padding-top: 1rem;
+  min-height: calc(100vh - 5rem);
 }
 
 .filter-Container{
